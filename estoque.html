@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>AVA - Estoque</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="img/logoava.png" alt="Logo AVA">
+    </div>
+
+    <nav>
+        <a href="cirurgico.html">Centro Cirúrgico</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="estoque.html" class="active">Estoque</a>
+        <a href="index.html">Login</a>
+    </nav>
+</header>
+
+<main>
+
+    <div class="layout-estoque">
+
+        <!-- TABELA -->
+        <div class="estoque-container">
+
+            <div class="topo-estoque">
+                <h2>Controle de Estoque</h2>
+                <button>+ Adicionar Produto</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Tipo</th>
+                        <th>Quantidade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr><td>Ração Premium</td><td>Alimento</td><td>25</td><td class="ok">OK</td></tr>
+                    <tr><td>Ração Filhote</td><td>Alimento</td><td>18</td><td class="ok">OK</td></tr>
+                    <tr><td>Dipirona</td><td>Medicamento</td><td>3</td><td class="low">Baixo</td></tr>
+                    <tr><td>Amoxicilina</td><td>Medicamento</td><td>12</td><td class="ok">OK</td></tr>
+                    <tr><td>Soro Fisiológico</td><td>Medicamento</td><td>2</td><td class="low">Baixo</td></tr>
+                    <tr><td>Vacina Antirrábica</td><td>Medicamento</td><td>20</td><td class="ok">OK</td></tr>
+                    <tr><td>Luvas Cirúrgicas</td><td>Material</td><td>0</td><td class="out">Sem estoque</td></tr>
+                    <tr><td>Máscaras</td><td>Material</td><td>30</td><td class="ok">OK</td></tr>
+                    <tr><td>Álcool 70%</td><td>Limpeza</td><td>8</td><td class="ok">OK</td></tr>
+                    <tr><td>Desinfetante</td><td>Limpeza</td><td>5</td><td class="low">Baixo</td></tr>
+                    <tr><td>Gaze Estéril</td><td>Material</td><td>4</td><td class="low">Baixo</td></tr>
+                    <tr><td>Seringa 5ml</td><td>Material</td><td>50</td><td class="ok">OK</td></tr>
+                    <tr><td>Antibiótico Vet</td><td>Medicamento</td><td>15</td><td class="ok">OK</td></tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- PAINEL LATERAL -->
+        <div class="painel-lateral">
+
+            <div class="alertas-box">
+                <h3>⚠️ Alertas</h3>
+                <ul>
+                    <li>Dipirona crítica</li>
+                    <li>Soro baixo</li>
+                    <li>Luvas zeradas</li>
+                    <li>Desinfetante baixo</li>
+                </ul>
+            </div>
+
+            <div class="atividade-box">
+                <h3>📋 Atividades</h3>
+                <ul>
+                    <li>Entrada registrada</li>
+                    <li>Produto atualizado</li>
+                    <li>Revisão feita</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    Associação Vida Animal - 1996&copy;
+</footer>
+
+</body>
+</html>
