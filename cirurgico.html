@@ -26,51 +26,53 @@
 
     <div class="estoque-container">
 
-
+        <!-- CARDS DE RESUMO -->
         <div class="info-cirurgico">
 
-        <div class="info-card">
-                <h4>Cirurgias Hoje</h4>
-                <p>3 agendadas</p>
+            <div class="info-card">
+                <h4>Veterinários ativos</h4>
+                <p>6 profissionais</p>
             </div>
 
             <div class="info-card">
-                <h4>Em andamento</h4>
-                <p>1 cirurgia</p>
+                <h4>Materiais em uso</h4>
+                <p>18 itens</p>
             </div>
 
-            <div class="info-card">
-                <h4>Sala</h4>
-                <p>Disponível</p>
+            <div class="info-card alert">
+                <h4>Alertas</h4>
+                <p>3 críticos</p>
             </div>
 
         </div>
 
+        <!-- TOPO -->
         <div class="topo-estoque">
-            <h2>Agendamento - Centro Cirúrgico</h2>
-            <button>+ Novo Agendamento</button>
+            <h2>Controle de Materiais Cirúrgicos</h2>
+            <button onclick="abrirModal()">+ Adicionar Material</button>
         </div>
 
+        <!-- TABELA NOVA -->
         <table>
             <thead>
                 <tr>
-                    <th>Data</th>
-                    <th>Horário</th>
                     <th>Veterinário</th>
+                    <th>Material</th>
+                    <th>Quantidade</th>
                     <th>Status</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr><td>22/04</td><td>08:00</td><td>Dra. Ana Souza</td><td class="ok">Agendado</td></tr>
-                <tr><td>22/04</td><td>09:30</td><td>Dr. Carlos Lima</td><td class="low">Em andamento</td></tr>
-                <tr><td>22/04</td><td>11:00</td><td>Dra. Fernanda Rocha</td><td class="ok">Agendado</td></tr>
-                <tr><td>22/04</td><td>13:00</td><td>Dr. João Mendes</td><td class="out">Finalizado</td></tr>
-                <tr><td>22/04</td><td>15:00</td><td>Dra. Paula Costa</td><td class="ok">Agendado</td></tr>
-                <tr><td>22/04</td><td>16:30</td><td>Dr. Ricardo Alves</td><td class="ok">Agendado</td></tr>
-                <tr><td>23/04</td><td>08:30</td><td>Dra. Mariana Lopes</td><td class="ok">Agendado</td></tr>
-                <tr><td>23/04</td><td>10:00</td><td>Dr. Lucas Ferreira</td><td class="low">Em preparação</td></tr>
-                <tr><td>23/04</td><td>14:00</td><td>Dra. Juliana Martins</td><td class="ok">Agendado</td></tr>
+                <tr><td>Dra. Ana Paula</td><td>Cateter</td><td>5</td><td class="ok">OK</td></tr>
+                <tr><td>Dra. Ana Paula</td><td>Luvas</td><td>2</td><td class="low">Baixo</td></tr>
+                <tr><td>Dr. João Mendes</td><td>Seringa</td><td>10</td><td class="ok">OK</td></tr>
+                <tr><td>Dr. João Mendes</td><td>Anestésico</td><td>1</td><td class="out">Crítico</td></tr>
+                <tr><td>Dra. Fernanda Rocha</td><td>Bisturi</td><td>6</td><td class="ok">OK</td></tr>
+                <tr><td>Dra. Fernanda Rocha</td><td>Gaze</td><td>3</td><td class="low">Baixo</td></tr>
+                <tr><td>Dr. Carlos Lima</td><td>Soro</td><td>2</td><td class="low">Baixo</td></tr>
+                <tr><td>Dra. Paula Costa</td><td>Máscara</td><td>12</td><td class="ok">OK</td></tr>
+                <tr><td>Dr. Ricardo Alves</td><td>Luvas</td><td>0</td><td class="out">Sem estoque</td></tr>
             </tbody>
         </table>
 
@@ -80,6 +82,39 @@
 <footer>
 Associação Vida Animal - 1996&copy;
 </footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+
+        <h3>Novo Material</h3>
+
+        <input type="text" placeholder="Veterinário">
+        <input type="text" placeholder="Material">
+        <input type="number" placeholder="Quantidade">
+
+        <button onclick="salvarProduto()">Salvar</button>
+        <button onclick="fecharModal()" class="cancelar">Cancelar</button>
+
+        <p id="msg-sucesso"></p>
+
+    </div>
+</div>
+
+<script>
+function abrirModal() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function salvarProduto() {
+    document.getElementById("msg-sucesso").innerText = "Produto adicionado (simulação)";
+}
+</script>
+
 
 </body>
 </html>

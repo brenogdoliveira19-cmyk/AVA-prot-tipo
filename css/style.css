@@ -290,6 +290,12 @@ tr:hover {
 
 /* ================================================= CIRÚRGICO ===== */
 
+.estoque-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
 .info-cirurgico {
     display: flex;
     gap: 15px;
@@ -299,10 +305,21 @@ tr:hover {
 .info-card {
     flex: 1;
     background: #fff;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
     text-align: center;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.info-card.alert {
+    border: 2px solid #FFD54F;
 }
 
 /* ================================================= RESPONSIVO ===== */
@@ -352,18 +369,22 @@ tr:hover {
 /* ===== LAYOUT ESTOQUE ===== */
 .layout-estoque {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     align-items: flex-start;
+
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* TABELA */
 .estoque-container {
-    flex: 2;
+    flex: 3;
 }
 
 /* LATERAL */
 .painel-lateral {
-    flex: 0.7;
+    flex: 1;
     max-width: 280px;
     display: flex;
     flex-direction: column;
@@ -390,6 +411,8 @@ tr:hover {
 .atividade-box li {
     margin-bottom: 6px;
 }
+
+
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
@@ -425,4 +448,100 @@ tr:hover {
 .alertas-box li,
 .atividade-box li {
     margin-bottom: 6px;
+}
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999; /* ESSENCIAL */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+}
+
+/* inputs */
+.modal-content input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* botões */
+.modal-content button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #FFD54F;
+    cursor: pointer;
+}
+
+.modal-content .cancelar {
+    background: #eee;
+}
+
+#msg-sucesso {
+    font-size: 13px;
+    color: green;
+    text-align: center;
+}
+
+
+/* ===== FIX MOBILE TABELA ===== */
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 15px;
+    }
+
+    .layout-estoque {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .estoque-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .cards,
+    .painel-extra,
+    .info-cirurgico {
+        flex-direction: column;
+    }
+
+    .painel-lateral {
+        max-width: 100%;
+    }
 }

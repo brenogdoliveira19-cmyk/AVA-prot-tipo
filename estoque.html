@@ -31,7 +31,7 @@
 
             <div class="topo-estoque">
                 <h2>Controle de Estoque</h2>
-                <button>+ Adicionar Produto</button>
+                <button onclick="abrirModal()">+ Adicionar Produto</button>
             </div>
 
             <table>
@@ -94,6 +94,39 @@
 <footer>
     Associação Vida Animal - 1996&copy;
 </footer>
+
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+
+        <h3>Novo Produto</h3>
+
+        <input type="text" placeholder="Nome do Produto">
+        <input type="text" placeholder="Tipo (Medicamento, Material...)">
+        <input type="number" placeholder="Quantidade">
+
+        <button onclick="salvarProduto()">Salvar</button>
+        <button onclick="fecharModal()" class="cancelar">Cancelar</button>
+
+        <p id="msg-sucesso"></p>
+
+    </div>
+</div>
+
+<script>
+function abrirModal() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function salvarProduto() {
+    document.getElementById("msg-sucesso").innerText = "Produto adicionado (simulação)";
+}
+</script>
 
 </body>
 </html>
